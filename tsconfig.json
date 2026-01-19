@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSourceMap": true,
+    "isolatedModules": false,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "ESNext",
+    "useUnknownInCatchVariables": false
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "transpileOnly": true,
+    "files": true
+  },
+  "include": [
+      "**/*.ts",
+      "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "lib": [
+    "esnext"
+  ]
+}
