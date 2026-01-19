@@ -1,0 +1,18 @@
+generates:
+  src/graphql/types.ts:
+    schema:
+      - 'src/graphql/root.schema.graphql'
+      - 'src/features/**/*.schema.graphql'
+    plugins:
+      - add:
+          content:
+            - "import type { Context } from './index'"
+      - typescript
+      - typescript-resolvers
+    config:
+      useIndexSignature: true
+      contextType: Context
+      scalars: { }
+      enumValues: { }
+      makeResolverTypeCallable: true
+      enumsAsTypes: true

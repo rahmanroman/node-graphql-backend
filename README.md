@@ -1,22 +1,24 @@
-# 🚀 Node.js TypeScript Basic Template
+# 🚀 Node.js GraphQL Backend Template
 
-A modern, lightweight, and opinionated boilerplate for building robust Node.js applications with TypeScript. Designed for speed, type safety, and developer experience.
+A modern, lightweight, and opinionated boilerplate for building robust GraphQL APIs with Node.js and TypeScript. Designed for speed, type safety, and a seamless developer experience.
 
 ## 🌟 Overview
 
-This repository provides a solid foundation for your next Node.js project. Instead of spending hours configuring build tools, linting, and testing frameworks, you can jump straight into writing your application logic.
+This repository provides a production-ready foundation for building modular GraphQL backends. It moves beyond a basic Node.js setup by integrating a schema-first workflow, automated type generation, and a feature-based architecture. Instead of wiring up standard middleware, you can focus on defining your schema and implementing business logic.
 
 ### Key Goals
-- **Minimalist**: No bloat—only the essential tools to get you moving.
-- **Type-Safe**: Strict TypeScript configuration for catching errors early.
-- **Developer-Friendly**: Integrated linting, formatting, and high-performance testing.
-- **Production-Ready**: Follows modern ESM standards and Node.js best practices.
+- **GraphQL-First**: Optimized for schema-driven development with integrated GraphQL tools.
+- **Type-Safe & Generated**: Automatic TypeScript type generation from GraphQL schemas to ensure end-to-end safety.
+- **Modular Architecture**: Organized by features (e.g., `src/features/ping`) to keep codebases scalable and maintainable.
+- **Developer-Friendly**: Hot-reloading, integrated linting, and high-performance testing with Vitest.
+- **Production-Ready**: Follows modern ESM standards, uses native Node.js environment handling, and stays minimalist.
 
 ## 🛠 Tech Stack
 
 - **Runtime**: [Node.js](https://nodejs.org/) (>= 20.19)
 - **Language**: [TypeScript](https://www.typescript.org/) 5.8
-- **Testing**: [Vitest](https://vitest.dev/) (Vite-native test runner)
+- **GraphQL**: [GraphQL.js](https://graphql.org/) & [GraphQL Codegen](https://the-guild.dev/graphql/codegen)
+- **Testing**: [Vitest](https://vitest.dev/)
 - **Linting**: [ESLint 9](https://eslint.org/) (with `@typescript-eslint` and `@stylistic`)
 - **Execution**: [ts-node](https://typestrong.org/ts-node/) for seamless TypeScript execution
 
@@ -24,7 +26,7 @@ This repository provides a solid foundation for your next Node.js project. Inste
 
 ### 1. Clone & Install
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:rahmanroman/node-graphql-backend.git
 cd template-node-basic
 npm install
 ```
@@ -49,22 +51,25 @@ npm test
 ```
 
 ## 📂 Project Structure
-
 ```
-├── src/                # Source code
-│   └── index.ts        # Entry point
-├── eslint.config.js    # Modern ESLint flat configuration
-├── tsconfig.json       # TypeScript compiler settings
-├── vitest.config.ts    # Testing configuration
-└── .env.example        # Template for environment variables
+├── src/
+│   ├── features/          # Domain-driven modules
+│   │   └── ping/          # Example feature (schema + logic)
+│   ├── graphql/           # GraphQL engine, root schema & generated types
+│   ├── server/            # Server setup and configuration
+│   └── index.ts           # Application entry point
+├── codegen.yml            # GraphQL Code Generator config
+├── eslint.config.js       # Modern ESLint flat config
+├── vitest.config.ts       # Vitest configuration
+└── .env.example           # Environment template
 ```
 
 ## ✨ Benefits
+- **Schema-First Workflow**: Define your API in `.graphql` files and let the tooling generate the boilerplate.
+- **Feature-Based Scaling**: Easily add new domains by creating a folder in `src/features`.
 - **Zero-Config Testing**: Vitest is pre-configured for blazing-fast unit testing.
-- **Modern ESM**: Built from the ground up to use standard JavaScript modules (`"type": "module"`).
-- **Consistent Code Style**: Pre-configured ESLint rules ensure your codebase remains clean and maintainable.
-- **Native Env Support**: Uses Node's native flag, reducing dependency on third-party loaders for local development. `--env-file`
+- **Modern ESM**: Built from the ground up to use standard JavaScript modules.
 
 ## 📄 License
-This project is licensed under the [MIT License](LICENSE).
-Built with ❤️ by [Roman Rakhman](https://github.com/romanrakhman)
+This project is licensed under the [MIT License](LICENSE).  <br>
+Built with ❤️ by [Roman Rakhman](https://github.com/rahmanroman)
