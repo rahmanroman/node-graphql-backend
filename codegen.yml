@@ -6,7 +6,7 @@ generates:
     plugins:
       - add:
           content:
-            - "import type { Context } from './index'"
+            - "import type { Context } from './context'"
       - typescript
       - typescript-resolvers
     config:

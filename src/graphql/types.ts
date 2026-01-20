@@ -1,4 +1,4 @@
-import type { Context } from './index'
+import type { Context } from './context'
 import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql'
 export type Maybe<T> = T | null
 export type InputMaybe<T> = Maybe<T>

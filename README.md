@@ -6,12 +6,21 @@ A modern, lightweight, and opinionated boilerplate for building robust GraphQL A
 
 This repository provides a production-ready foundation for building modular GraphQL backends. It moves beyond a basic Node.js setup by integrating a schema-first workflow, automated type generation, and a feature-based architecture. Instead of wiring up standard middleware, you can focus on defining your schema and implementing business logic.
 
-### Key Goals
+## 🔑 Key Goals
+
 - **GraphQL-First**: Optimized for schema-driven development with integrated GraphQL tools.
 - **Type-Safe & Generated**: Automatic TypeScript type generation from GraphQL schemas to ensure end-to-end safety.
 - **Modular Architecture**: Organized by features (e.g., `src/features/ping`) to keep codebases scalable and maintainable.
 - **Developer-Friendly**: Hot-reloading, integrated linting, and high-performance testing with Vitest.
 - **Production-Ready**: Follows modern ESM standards, uses native Node.js environment handling, and stays minimalist.
+
+## ✨ Benefits
+
+- **Schema-First Workflow**: Define your API in `.graphql` files and let the tooling generate the boilerplate.
+- **Feature-Based Scaling**: Easily add new domains by creating a folder in `src/features`.
+- **Endpoint Protection**: Built-in guards middleware for reusable authorization and access control across resolvers.
+- **Zero-Config Testing**: Vitest is pre-configured for blazing-fast unit testing.
+- **Modern ESM**: Built from the ground up to use standard JavaScript modules.
 
 ## 🛠 Tech Stack
 
@@ -63,12 +72,6 @@ npm test
 ├── vitest.config.ts       # Vitest configuration
 └── .env.example           # Environment template
 ```
-
-## ✨ Benefits
-- **Schema-First Workflow**: Define your API in `.graphql` files and let the tooling generate the boilerplate.
-- **Feature-Based Scaling**: Easily add new domains by creating a folder in `src/features`.
-- **Zero-Config Testing**: Vitest is pre-configured for blazing-fast unit testing.
-- **Modern ESM**: Built from the ground up to use standard JavaScript modules.
 
 ## 📄 License
 This project is licensed under the [MIT License](LICENSE).  <br>

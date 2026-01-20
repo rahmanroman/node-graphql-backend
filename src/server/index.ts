@@ -3,8 +3,9 @@ import fastifyApollo from '@as-integrations/fastify'
 import helmet from '@fastify/helmet'
 import cors from '@fastify/cors'
 
-import { createApolloServer, getContext } from '../graphql'
+import { createApolloServer } from '../graphql'
 import { config } from './config'
+import { getContext } from '../graphql/context'
 
 export const createFastifyServer = async () => {
   const server: FastifyInstance = Fastify({

@@ -1,9 +1,11 @@
 import { composeResolvers } from '@graphql-tools/resolvers-composition'
 
-import { ping } from '../features/ping'
+import * as Ping from '../features/ping'
 
 export default composeResolvers({
   Query: {
-    ping,
+    ping: Ping.ping,
   },
+}, {
+  ...Ping.guard,
 })
