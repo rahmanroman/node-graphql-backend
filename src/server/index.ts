@@ -27,6 +27,7 @@ export const createFastifyServer = async () => {
 
   server.register(cors, {
     origin: false,
+    credentials: true,
   })
 
   server.get('/', async () => {
