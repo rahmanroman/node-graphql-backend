@@ -4,7 +4,7 @@ import { ApolloFastifyContextFunction, fastifyApolloDrainPlugin } from '@as-inte
 import { DocumentNode } from 'graphql/language'
 import { loadFiles } from '@graphql-tools/load-files'
 
-import resolvers from '../features'
+import resolvers from './resolvers'
 
 export interface Context {
   token: string | null
