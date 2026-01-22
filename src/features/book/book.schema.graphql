@@ -1,0 +1,12 @@
+type Book {
+  id: Int!
+  title: String!
+  year: Int!
+  authorId: Int!
+  author: Author!
+}
+
+extend type Query {
+  books(year: Int): [Book!]!
+  book(id: Int!): Book
+}

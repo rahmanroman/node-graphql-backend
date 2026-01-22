@@ -7,6 +7,7 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: 
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> }
 export type MakeEmpty<T extends Record<string, unknown>, K extends keyof T> = Partial<Record<K, never>>
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never }
+export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> }
 /** All built-in and custom scalars, mapped to their actual values */
 export interface Scalars {
   ID: { input: string, output: string }
@@ -17,9 +18,41 @@ export interface Scalars {
   JSON: { input: any, output: any }
 }
 
+export interface Author {
+  __typename?: 'Author'
+  books: Book[]
+  id: Scalars['Int']['output']
+  name: Scalars['String']['output']
+}
+
+export interface Book {
+  __typename?: 'Book'
+  author: Author
+  authorId: Scalars['Int']['output']
+  id: Scalars['Int']['output']
+  title: Scalars['String']['output']
+  year: Scalars['Int']['output']
+}
+
 export interface Query {
   __typename?: 'Query'
+  author?: Maybe<Author>
+  authors: Author[]
+  book?: Maybe<Book>
+  books: Book[]
   ping: Scalars['String']['output']
+}
+
+export interface QueryAuthorArgs {
+  id: Scalars['Int']['input']
+}
+
+export interface QueryBookArgs {
+  id: Scalars['Int']['input']
+}
+
+export interface QueryBooksArgs {
+  year?: InputMaybe<Scalars['Int']['input']>
 }
 
 export type WithIndex<TObject> = TObject & Record<string, any>
@@ -88,7 +121,10 @@ export type DirectiveResolverFn<TResult = Record<PropertyKey, never>, TParent = 
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = ResolversObject<{
+  Author: ResolverTypeWrapper<Author>
+  Book: ResolverTypeWrapper<Book>
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>
+  Int: ResolverTypeWrapper<Scalars['Int']['output']>
   JSON: ResolverTypeWrapper<Scalars['JSON']['output']>
   Query: ResolverTypeWrapper<Record<PropertyKey, never>>
   String: ResolverTypeWrapper<Scalars['String']['output']>
@@ -96,10 +132,27 @@ export type ResolversTypes = ResolversObject<{
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = ResolversObject<{
+  Author: Author
+  Book: Book
   Boolean: Scalars['Boolean']['output']
+  Int: Scalars['Int']['output']
   JSON: Scalars['JSON']['output']
   Query: Record<PropertyKey, never>
   String: Scalars['String']['output']
+}>
+
+export type AuthorResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Author'] = ResolversParentTypes['Author']> = ResolversObject<{
+  books?: Resolver<ResolversTypes['Book'][], ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+}>
+
+export type BookResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']> = ResolversObject<{
+  author?: Resolver<ResolversTypes['Author'], ParentType, ContextType>
+  authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  year?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
 }>
 
 export interface JsonScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['JSON'], any> {
@@ -107,10 +160,16 @@ export interface JsonScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes
 }
 
 export type QueryResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = ResolversObject<{
+  author?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<QueryAuthorArgs, 'id'>>
+  authors?: Resolver<ResolversTypes['Author'][], ParentType, ContextType>
+  book?: Resolver<Maybe<ResolversTypes['Book']>, ParentType, ContextType, RequireFields<QueryBookArgs, 'id'>>
+  books?: Resolver<ResolversTypes['Book'][], ParentType, ContextType, Partial<QueryBooksArgs>>
   ping?: Resolver<ResolversTypes['String'], ParentType, ContextType>
 }>
 
 export type Resolvers<ContextType = Context> = ResolversObject<{
+  Author?: AuthorResolvers<ContextType>
+  Book?: BookResolvers<ContextType>
   JSON?: GraphQLScalarType
   Query?: QueryResolvers<ContextType>
 }>

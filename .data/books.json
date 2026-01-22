@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "authorId": 1,
+    "title": "Clean Code",
+    "year": 2008
+  },
+  {
+    "id": 2,
+    "authorId": 1,
+    "title": "Clean Architecture",
+    "year": 2017
+  },
+  {
+    "id": 3,
+    "authorId": 1,
+    "title": "The Clean Coder",
+    "year": 2011
+  },
+  {
+    "id": 4,
+    "authorId": 2,
+    "title": "Refactoring",
+    "year": 1999
+  },
+  {
+    "id": 5,
+    "authorId": 2,
+    "title": "Patterns of Enterprise Application Architecture",
+    "year": 2002
+  },
+  {
+    "id": 6,
+    "authorId": 3,
+    "title": "Code Complete",
+    "year": 1993
+  },
+  {
+    "id": 7,
+    "authorId": 3,
+    "title": "Rapid Development",
+    "year": 1996
+  },
+  {
+    "id": 8,
+    "authorId": 4,
+    "title": "The Art of Computer Programming, Vol 1",
+    "year": 1968
+  },
+  {
+    "id": 9,
+    "authorId": 4,
+    "title": "Concrete Mathematics",
+    "year": 1989
+  },
+  {
+    "id": 10,
+    "authorId": 5,
+    "title": "Eloquent JavaScript, 3rd Edition",
+    "year": 2018
+  },
+  {
+    "id": 11,
+    "authorId": 5,
+    "title": "Eloquent JavaScript, 2nd Edition",
+    "year": 2014
+  },
+  {
+    "id": 12,
+    "authorId": 6,
+    "title": "You Don't Know JS: Scope & Closures",
+    "year": 2014
+  },
+  {
+    "id": 13,
+    "authorId": 6,
+    "title": "You Don't Know JS: Up & Going",
+    "year": 2014
+  },
+  {
+    "id": 14,
+    "authorId": 6,
+    "title": "You Don't Know JS: ES6 & Beyond",
+    "year": 2015
+  },
+  {
+    "id": 15,
+    "authorId": 7,
+    "title": "Domain-Driven Design",
+    "year": 2003
+  },
+  {
+    "id": 16,
+    "authorId": 7,
+    "title": "Domain-Driven Design Reference",
+    "year": 2014
+  },
+  {
+    "id": 17,
+    "authorId": 8,
+    "title": "The Pragmatic Programmer",
+    "year": 1999
+  },
+  {
+    "id": 18,
+    "authorId": 8,
+    "title": "Pragmatic Thinking and Learning",
+    "year": 2008
+  },
+  {
+    "id": 19,
+    "authorId": 9,
+    "title": "Programming Ruby",
+    "year": 2000
+  },
+  {
+    "id": 20,
+    "authorId": 9,
+    "title": "The Pragmatic Starter Kit",
+    "year": 2004
+  },
+  {
+    "id": 21,
+    "authorId": 10,
+    "title": "Test Driven Development: By Example",
+    "year": 2002
+  },
+  {
+    "id": 22,
+    "authorId": 10,
+    "title": "Extreme Programming Explained",
+    "year": 1999
+  },
+  {
+    "id": 23,
+    "authorId": 2,
+    "title": "No Fluff Just Stuff",
+    "year": 2005
+  },
+  {
+    "id": 24,
+    "authorId": 4,
+    "title": "The Art of Computer Programming, Vol 2",
+    "year": 1969
+  },
+  {
+    "id": 25,
+    "authorId": 3,
+    "title": "Software Estimation",
+    "year": 2006
+  }
+]
