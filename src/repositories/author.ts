@@ -5,7 +5,7 @@ export const authors = () =>
   AuthorsData as Author[]
 
 export const authorById = (id: number) =>
-  AuthorsData.find(_ => _.id === id) as Author | null
+  AuthorsData.find(_ => _.id === id) ?? null
 
 export const authorByBook = (book: Book) =>
-  AuthorsData.find(_ => _.id === book.authorId) as Author | null
+  AuthorsData.find(_ => _.id === book.authorId) as Author ?? null

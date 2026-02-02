@@ -1,7 +1,7 @@
 type Author {
   id: Int!
   name: String!
-  books: [Book!]!
+  books: [Book!]
 }
 
 extend type Query {

@@ -3,7 +3,7 @@ type Book {
   title: String!
   year: Int!
   authorId: Int!
-  author: Author!
+  author: Author
 }
 
 extend type Query {

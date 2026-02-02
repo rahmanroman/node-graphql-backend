@@ -20,14 +20,14 @@ export interface Scalars {
 
 export interface Author {
   __typename?: 'Author'
-  books: Book[]
+  books?: Maybe<Book[]>
   id: Scalars['Int']['output']
   name: Scalars['String']['output']
 }
 
 export interface Book {
   __typename?: 'Book'
-  author: Author
+  author?: Maybe<Author>
   authorId: Scalars['Int']['output']
   id: Scalars['Int']['output']
   title: Scalars['String']['output']
@@ -142,13 +142,13 @@ export type ResolversParentTypes = ResolversObject<{
 }>
 
 export type AuthorResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Author'] = ResolversParentTypes['Author']> = ResolversObject<{
-  books?: Resolver<ResolversTypes['Book'][], ParentType, ContextType>
+  books?: Resolver<Maybe<ResolversTypes['Book'][]>, ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
 }>
 
 export type BookResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']> = ResolversObject<{
-  author?: Resolver<ResolversTypes['Author'], ParentType, ContextType>
+  author?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType>
   authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
